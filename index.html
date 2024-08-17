@@ -36,18 +36,13 @@
 
         .btn {
             animation: pulse 1.5s infinite;
+            transition: transform 0.3s ease;
         }
 
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         #option3 {
@@ -65,23 +60,31 @@
             <img src="https://media.giphy.com/media/M8o1MOwcwsWOmueqN4/giphy.gif" alt="Cute love illustration">
         </div>
         <div class="buttons">
-            <button class="btn" id="option1" onclick="showLove('To the moon and back!')">To the moon and back</button>
-            <button class="btn" id="option2" onclick="showLove('More than all the stars in the sky!')">As much as the stars</button>
-            <button class="btn" id="option3" onmouseover="moveButton()" onclick="showLove('Too much to be measured!')">Not sure</button>
+            <button class="btn" id="option1" onclick="showLove('To the moon and back!', 'https://media.giphy.com/media/3o6Zt8zb1GhKSePKdG/giphy.gif')">To the moon and back</button>
+            <button class="btn" id="option2" onclick="showLove('More than all the stars in the sky!', 'https://media.giphy.com/media/l0Ex5C4lHPGO60FQY/giphy.gif')">As much as the stars</button>
+            <button class="btn" id="option3" onmouseover="moveButton()" onclick="moveButton()">Not sure</button>
         </div>
     </div>
     <script>
-        function showLove(message) {
-            window.location.href = `love-message-result.html?message=${encodeURIComponent(message)}`;
+        function showLove(message, gif) {
+            window.location.href = `love-message-result.html?message=${encodeURIComponent(message)}&gif=${encodeURIComponent(gif)}`;
         }
-        
+
         function moveButton() {
             var button = document.getElementById('option3');
             var x = Math.random() * (window.innerWidth - button.offsetWidth);
             var y = Math.random() * (window.innerHeight - button.offsetHeight);
             button.style.left = `${x}px`;
             button.style.top = `${y}px`;
+
+            // Increase size of other buttons
+            document.getElementById('option1').style.transform = "scale(1.1)";
+            document.getElementById('option2').style.transform = "scale(1.1)";
+            setTimeout(function() {
+                document.getElementById('option1').style.transform = "scale(1)";
+                document.getElementById('option2').style.transform = "scale(1)";
+            }, 300);
         }
     </script>
 </body>
-</html>
+</html>        
