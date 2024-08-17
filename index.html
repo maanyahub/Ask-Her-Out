@@ -6,6 +6,55 @@
     <title>How Much I Love You</title>
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes backgroundAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            background: linear-gradient(-45deg, #FFB6C1, #FF69B4, #FF1493, #FF4500);
+            background-size: 400% 400%;
+            animation: backgroundAnimation 15s ease infinite;
+        }
+
+        .header_text {
+            animation: fadeInDown 2s;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -100%, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .btn {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #option3 {
+            position: absolute;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,7 +67,7 @@
         <div class="buttons">
             <button class="btn" id="option1" onclick="showLove('To the moon and back!')">To the moon and back</button>
             <button class="btn" id="option2" onclick="showLove('More than all the stars in the sky!')">As much as the stars</button>
-            <button class="btn" id="option3" onmouseover="moveButton()" onclick="moveButton()">Not sure</button>
+            <button class="btn" id="option3" onmouseover="moveButton()" onclick="showLove('Too much to be measured!')">Not sure</button>
         </div>
     </div>
     <script>
@@ -27,10 +76,11 @@
         }
         
         function moveButton() {
-            var x = Math.random() * (window.innerWidth - document.getElementById('option3').offsetWidth) - 85;
-            var y = Math.random() * (window.innerHeight - document.getElementById('option3').offsetHeight) - 48;
-            document.getElementById('option3').style.left = `${x}px`;
-            document.getElementById('option3').style.top = `${y}px`;
+            var button = document.getElementById('option3');
+            var x = Math.random() * (window.innerWidth - button.offsetWidth);
+            var y = Math.random() * (window.innerHeight - button.offsetHeight);
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
         }
     </script>
 </body>
