@@ -7,48 +7,50 @@
     <link rel="stylesheet" href="./styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @keyframes backgroundAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+    @keyframes backgroundAnimation {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
 
-        body {
-            background: linear-gradient(-45deg, #FFB6C1, #FF69B4, #FF1493, #FF4500);
-            background-size: 400% 400%;
-            animation: backgroundAnimation 15s ease infinite;
-        }
+    body {
+        background: linear-gradient(-45deg, #FFB6C1, #FF69B4, #FF1493, #FF4500);
+        background-size: 400% 400%;
+        animation: backgroundAnimation 15s ease infinite;
+    }
 
-        .header_text {
-            animation: fadeInDown 2s;
-        }
+    .header_text {
+        color: #fff; /* White color for more contrast */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for better readability */
+        animation: fadeInDown 2s;
+    }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translate3d(0, -100%, 0);
-            }
-            to {
-                opacity: 1;
-                transform: translate3d(0, 0, 0);
-            }
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
         }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
 
-        .btn {
-            animation: pulse 1.5s infinite;
-            transition: transform 0.3s ease;
-        }
+    .btn {
+        animation: pulse 1.5s infinite;
+        transition: transform 0.3s ease;
+    }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.1); }
+        100% { transform: scale(1); }
+    }
 
-        #option3 {
-            position: absolute;
-            cursor: pointer;
-        }
+    #option3 {
+        position: absolute;
+        cursor: pointer;
+    }
     </style>
 </head>
 <body>
