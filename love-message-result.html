@@ -43,8 +43,8 @@
 <body>
     <div class="container">
         <h1 class="header_text">You're right!</h1>
-        <div class="gif_container">
-            <img src="https://media.giphy.com/media/M8o1MOwcwsWOmueqN4/giphy.gif" alt="Cute love illustration">
+        <div class="gif_container" id="gifContainer">
+            <!-- GIF will be loaded here -->
         </div>
         <p class="message" id="loveMessage"></p>
         <button class="back-btn" onclick="goBack()">Back</button>
@@ -53,7 +53,17 @@
         window.onload = function() {
             const urlParams = new URLSearchParams(window.location.search);
             const message = urlParams.get('message');
+            const gif = urlParams.get('gif');
             document.getElementById('loveMessage').textContent = message || "I love you more than words can express!";
+            
+            if (gif) {
+                const img = document.createElement('img');
+                img.src = gif;
+                img.alt = "Love GIF";
+                img.style.maxWidth = "100%";
+                img.style.height = "auto";
+                document.getElementById('gifContainer').appendChild(img);
+            }
         }
 
         function goBack() {
