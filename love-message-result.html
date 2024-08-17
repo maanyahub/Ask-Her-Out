@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Much I Love You</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .message {
+            font-size: 24px;
+            color: #FF1493;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="header_text">You're right!</h1>
+        <div class="gif_container">
+            <img src="https://media.giphy.com/media/M8o1MOwcwsWOmueqN4/giphy.gif" alt="Cute love illustration">
+        </div>
+        <p class="message" id="loveMessage"></p>
+    </div>
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const message = urlParams.get('message');
+            document.getElementById('loveMessage').textContent = message || "I love you more than words can express!";
+        }
+    </script>
+</body>
+</html>
