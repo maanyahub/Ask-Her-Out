@@ -75,9 +75,53 @@
         </div>
     </div>
     <script>
-        function showLove(message, gif) {
-            window.location.href = `love-message-result.html?message=${encodeURIComponent(message)}&gif=${encodeURIComponent(gif)}`;
-        }
+         function showLove(message, gif) {
+    const messages = {
+        'To the moon and back!': `
+            My love for you is boundless, reaching far beyond the confines of this world. 
+            If I could, I would journey to the moon and back, a thousand times over, just to see your smile. 
+            Each moment with you is like a precious star in the vast universe, glowing with warmth and joy. 
+            You are my everything, and my love for you knows no limits. 
+            Just like the moon's soft glow lights up the darkest night, your love brightens my life in ways I never imagined. 
+            I will forever cherish you, loving you to the moon and back, again and again.
+        `,
+        'More than all the stars in the sky!': `
+            Look up at the night sky, and you'll see millions of stars, each twinkling with its own unique light. 
+            Yet, no star shines as brightly as the love I have for you. 
+            My love for you stretches across the cosmos, outshining every star in the galaxy. 
+            It is eternal, infinite, and as vast as the universe itself. 
+            You are my guiding star, leading me through the dark times and filling my life with beauty and wonder. 
+            I love you more than words can express, more than all the stars that ever were or ever will be.
+        `,
+        'To infinity and beyond!': `
+            My love for you transcends the ordinary, venturing into realms unknown and infinite. 
+            Just like the stars in the sky are countless, so are the ways I adore you. 
+            Every day with you feels like a new adventure, an endless journey through the universe of our love. 
+            No distance, no obstacle can ever diminish my love for you; it is boundless and eternal. 
+            Together, we will explore the endless possibilities that our love holds, to infinity and beyond. 
+            You are my forever, and my love for you will never fade, only grow stronger with each passing moment.
+        `,
+        'As deep as the ocean!': `
+            My love for you runs as deep as the ocean, vast and profound. 
+            Just as the ocean's depths hold countless mysteries, my heart holds endless affection for you. 
+            Every wave that crashes against the shore reminds me of the surges of love I feel whenever I'm with you. 
+            You are the anchor that keeps me grounded, and the tide that pulls me ever closer to you. 
+            With every breath I take, I love you more, and just like the ocean, my love for you will never run dry. 
+            It is eternal, unyielding, and as deep as the ocean itself.
+        `,
+        'With all my heart!': `
+            I love you with every beat of my heart, with every breath I take. 
+            You are the one who makes my heart race with joy, the one who completes my soul. 
+            My love for you is pure, true, and unwavering, a fire that burns brightly within me. 
+            Just as the heart sustains life, you sustain me, filling my world with happiness and love. 
+            I am devoted to you, completely and without reservation, with all my heart. 
+            Every moment I spend with you is a testament to the love I feel, a love that will never fade.
+        `
+    };
+    
+    const selectedMessage = messages[message];
+    window.location.href = `love-message-result.html?message=${encodeURIComponent(selectedMessage)}&gif=${encodeURIComponent(gif)}`;
+         }
 
         function moveButton() {
             var button = document.getElementById('option3');
